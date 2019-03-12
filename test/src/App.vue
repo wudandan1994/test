@@ -251,7 +251,6 @@ body,html {
             height: 100%;
             color: #c0c4cc;
             text-align: center;
-            // background-color: red;
             top: 0;
             right: -50px;
           }
@@ -282,7 +281,6 @@ body,html {
           #bottom-arr {
             vertical-align: top;
             line-height: 50px;
-            background-color: red;
           }
         }
         > .el-row {
@@ -347,15 +345,12 @@ body,html {
           }
         }
         > .el-main {
-          padding: 15px 20px;
-          margin-bottom: 10px;
-          flex:1;
           font-family: SourceHanSansCN-Regular;
+          padding: 0;
         }
       }
     }
     > .el-container {
-      display: flex;
       flex-basis: auto;
     }
   }

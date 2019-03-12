@@ -11,17 +11,32 @@
                     <form  class="form">
                         <div class="form-item-top">
                             <input type="text" placeholder="请选择" class="input-select" readonly autocomplete="off">
+                            <i class="el-icon-arrow-down icon-arr"></i>
+                        </div>
+                        <div class="title">
+                            <span class="circle"></span> 工单信息
+                            <ul class="info">
+                                <li>工单类型</li>
+                                <li>总数量</li>
+                                <li>成品科号</li>
+                                <li>客户科号</li>
+                                <li>产品型号</li>
+                            </ul>
                         </div>
                     </form>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                    <ul class="papernum">
+                        <li>列印张数</li>
+                        <li>常用数量</li>
+                        <li>
+                            <a href="#">100</a>
+                        </li>
+                        <li><a href="#">200</a></li>
+                        <li><a href="#">300</a></li>
+                        <li><a href="#">400</a></li>
                     </ul>
-                    <el-button type="primary" >打印</el-button>
+                    <div class="print">
+                         <el-button type="primary" >打印</el-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,14 +112,53 @@ export default {
                             padding-left: 20px;
 
                        }
+                       >.icon-arr {
+                           position: absolute;
+                           top:164px;
+                           right:180px;
+                           color:red;
+                       }
                        .input-select:focus {
                            border-color: #409eff;
                        }
-                        .input-select::after {
-                            content:'';
-                            
-                        }
+                        
                    }
+                   >.title {
+                       padding-left: 10px;
+                       >.circle {
+                           display: inline-block;
+                           width:8px;
+                           height: 8px;
+                           background-color: #409eff;
+                           border-radius: 50%;
+                       }
+                       >.info {
+                           width:100%;
+                           margin-top:15px;
+                           height: 100%;
+                           padding-left: 15px;
+                           > li {
+                               width:50%;
+                               float: left;
+                               line-height: 35px;
+                           }
+                       }
+                   }
+                }
+                .papernum {
+                    margin-left: 150px;
+                    overflow: hidden;
+                    >li {
+                        float: left;
+                        padding-left: 20px;
+                        >a{
+                            color:#409eff;
+                        }
+                    }
+                }
+                .print {
+                    margin-left: 188px;
+                    margin-top:30px;
                 }
               }
            } 
