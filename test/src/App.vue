@@ -3,8 +3,6 @@
     <div class="layout">
       <section class="el-container is-vertical">
         <header class="el-header">
-          <!-- <div class="topbar el-row">    
-          </div>-->
           <el-row :gutter="20" class="topbar el-row">
             <el-col :span="4">
               <div class="grid-content bg-purple">
@@ -19,16 +17,27 @@
                 <i class="iconfont icon-paper"></i>
               </div>
             </el-col>
-            <el-col :span="4">
+            <el-col :span="5">
               <div class="grid-content bg-purple">
-                <span>生产管理</span>
-                <i class="iconfont icon-jiantou1"></i>
+                      <el-dropdown trigger="click">
+                          <span class="el-dropdown-link" style="color:white;padding-left:20px;">
+                            生产管理<i class="el-icon-arrow-down el-icon--right"></i>
+                          </span>
+                          <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item >生产建模</el-dropdown-item>
+                            <el-dropdown-item >工单管理</el-dropdown-item>
+                            <el-dropdown-item >物料管理</el-dropdown-item>
+                            <el-dropdown-item style="color:rgb(62,182,216)" >生产管理</el-dropdown-item>
+                            <el-dropdown-item >报表看板</el-dropdown-item>
+                          </el-dropdown-menu>
+                        </el-dropdown>
+               
               </div>
             </el-col>
             <el-col :span="3">
-              <div class="grid-content bg-purple">4</div>
+              <div class="grid-content bg-purple">&nbsp;</div>
             </el-col>
-            <el-col :span="5">
+            <el-col :span="4">
               <div class="grid-content bg-purple el-search">
                 <input type="text" autocomplete="off" placeholder="CMD" class="input-text">
                 <span class="el-input_suffix">
@@ -40,20 +49,85 @@
             </el-col>
             <el-col :span="1">
               <div class="grid-content bg-purple">
-                <i class="iconfont icon-shezhi setingfont"></i>
+                    <el-popover
+                    placement="bottom"
+                    width="300"
+                    trigger="click">
+                       <p style="background-color:#eee;padding:0px;margin:0px;z-index:999;">&nbsp;</p>
+                       <p style="text-align:left; line-height:20px; margin-bottom:10px;">OPI基本设定</p>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                         <span>厂别</span>
+                         <span>MEGA</span>
+                       </li>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                          <span>制程段</span>
+                         <span>MODULE</span>
+                       </li>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                         <span>制程段类型</span>
+                         <span>MIB</span>
+                       </li>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                          <span>生产区域</span>
+                         <span>ASSY</span>
+                       </li>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                         <span>线别</span>
+                         <span>ASM08-1</span>
+                       </li>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                           <span>工作站</span>
+                          <span>ASM08-1</span>
+                       </li>
+                       <li style="border-bottom:1px solid #eee;line-height:20px;display:flex;justify-content:space-between;font-size:12px;">
+                         <span>站点</span>
+                         <span>ASSEMBLY</span>
+                       </li>
+                        <div style="display:flex;justify-content:space-between;margin-top:10px;">
+                            <el-button type="primary" size="medium">OPI基本设定</el-button>
+                              <el-button type="danger" size="medium">登出</el-button>
+                        </div>
+                    <div slot="reference" >
+                         <i class="iconfont icon-shezhi setingfont"></i>
+                    </div>
+                  </el-popover>
+
+
+               
               </div>
             </el-col>
-            <el-col :span="4">
+            <el-col :span="3">
               <div class="grid-content bg-purple">
-                <i class="iconfont icon-touxiang user"></i>
-                <span class="text">admin</span>
-                <i class="iconfont icon-jiantouxiangxia" id="bottom-arr"></i>
+
+                 <el-dropdown trigger="click">
+                      <span class="el-dropdown-link" style="color:white;">
+                          <i class="iconfont icon-touxiang user"></i>
+                          <span class="text">admin</span>
+                          <i class="iconfont icon-jiantouxiangxia" id="bottom-arr"></i>
+                      </span>
+                      <el-dropdown-menu slot="dropdown">
+                          <el-dropdown-item >个人信息</el-dropdown-item>
+                          <el-dropdown-item >退出</el-dropdown-item>
+                      </el-dropdown-menu>
+                </el-dropdown>
               </div>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="3">
               <div class="grid-content bg-purple">
-                <p>简体中文</p>
-                <i class="iconfont icon-jiantou1"></i>
+                  <transition name='moving'>
+
+                      <el-dropdown trigger="click">
+                            <span class="el-dropdown-link" style="color:white;font-size:15px;">
+                              简体中文<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                              <el-dropdown-item style="color:rgb(62,182,216)">简体中文</el-dropdown-item>
+                              <el-dropdown-item >繁体中文</el-dropdown-item>
+                              <el-dropdown-item >English</el-dropdown-item>
+                            </el-dropdown-menu>
+                      </el-dropdown>
+
+                  </transition>
               </div>
             </el-col>
           </el-row>
@@ -67,16 +141,16 @@
               <a href="#" class="cut">切换</a>
             </div>
             <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-              <el-menu :default-openeds="['1', '3']">
+              <el-menu >
                 <el-submenu index="1">
                   <template slot="title">
                     <i class="el-icon-printer"></i>投产开卡
                   </template>
                   <ul class="ulbox">
-                    <router-link to="/card/runcard" tag="li" index="1-1">
+                    <router-link to="/card/runcard" tag="li"  index="1-1">
                       <span class="asideDropDot"></span>打印Runcard标签
                     </router-link>
-                    <router-link to="/card/reprintruncard" tag="li" index="1-2">
+                    <router-link to="/card/reprintruncard"  tag="li"  index="1-2">
                       <span class="asideDropDot"></span>重印Runcard标签
                     </router-link>
                     <router-link to="/card/runcard" tag="li" index="1-3">
@@ -85,15 +159,18 @@
                   </ul>
                 </el-submenu>
 
-                <el-submenu index="2">
-                  <template slot="title">
-                    <i class="el-icon-menu"></i>制程作业
+                <el-submenu index="2" @click.native="changeColor" :class="isChangeColor?'change-color':''">
+                  <template slot="title"  >
+                      <i class="el-icon-menu"></i>制程作业
                   </template>
                   <ul class="ulbox">
                     <router-link to="/croute/assembly" tag="li" index="2-1">
-                      <span class="asideDropDot"></span>组装作业
+                        <p @click="test5">
+                          <span class="asideDropDot" :class="isLight5?'is-light':''" ></span>
+                          <span :class="isLight5?'font-light':''">组装作业</span>
+                        </p>
                     </router-link>
-                    <router-link to="/product/stnMtrlSetting" tag="li" index="1-2">
+                    <router-link to="/product/stnMtrlSetting" tag="li" index="2-2">
                       <span class="asideDropDot"></span>工作站材料
                     </router-link>
                   </ul>
@@ -173,20 +250,34 @@
   </div>
 </template>
 
-
-
 <script>
 export default {
   name: "App",
-  methods: {}
+  data(){
+    return {
+      isChangeColor:false,
+      isLight5:false,
+    }
+  },
+  methods: {
+    changeColor(){
+      this.isChangeColor=!this.isChangeColor;
+      // this.$nextTick(function(){
+      //     // console.log(document.querySelector('.el-menu--inline'));
+      //     document.querySelector('.el-menu--inline').style.display="block;"
+      // })
+    },
+    test5(){
+      this.isLight5=!this.isLight5
+      this.isChangeColor=true
+    }
+  }
 };
 </script>
 
+
+
 <style lang='less' >
-body,html {
-  width:100%;
-  height: 100%;
-}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -196,7 +287,7 @@ body,html {
     width: 100%;
     height: 100%;
     > .el-container.is-vertical {
-      flex-direction: column;
+      // flex-direction: column;
       > .el-header {
         width: 100%;
         padding: 0;
@@ -215,12 +306,26 @@ body,html {
             width: 26px;
             height: 28px;
           }
+          .moving-enter,
+          .moving-leave-to {
+            opacity: 0;
+          }
+          .moving-enter-active,
+          .moving-leave-active {
+            opacity: 1;
+            transition: all 5s;
+          }
           .el-search {
             position: relative;
             width: 110px;
             height: 60px;
             transition: all 1s;
             font-size: 14px;
+          }
+          .el-popover {
+            background-color: red;
+            min-width: 100px;
+            padding: 0!important;
           }
           .headerfont {
             margin-left: 40px;
@@ -233,21 +338,31 @@ body,html {
           .icon {
             color: white !important;
           }
+          .bottom-arr {
+            color:white;
+            
+          }
           .input-text,
-          .icon {
+           {
+             width:100px;
+             float:right;
+             margin-top:10px;
             background-color: #336d7c;
             border-radius: 16px;
             border: none;
             color: #fff;
             transition: all 1s;
             height: 28px;
-            padding-left: 9px;
             padding-right: 30px;
+            padding-left: 30px;
             outline: none;
+          }
+          .input-text:hover {
+              width:150px;
           }
           .el-input_suffix {
             transition: all 0.3s;
-            position: absolute;
+            // position: absolute;
             height: 100%;
             color: #c0c4cc;
             text-align: center;
@@ -258,6 +373,9 @@ body,html {
             pointer-events: all;
           }
           .el-icon-search {
+            position: absolute;
+            top:13px;
+            right:0px;
             font-size: 18px;
             margin-top: -5px;
             line-height: 36px;
@@ -281,6 +399,7 @@ body,html {
           #bottom-arr {
             vertical-align: top;
             line-height: 50px;
+            font-size: 25px;
           }
         }
         > .el-row {
@@ -288,9 +407,7 @@ body,html {
         }
       }
       > .main {
-        position: absolute;
-        top: 50px;
-        bottom: 0;
+        box-sizing: border-box;
         overflow: hidden;
         width: 100%;
         > .el-aside {
@@ -313,6 +430,13 @@ body,html {
               margin-right: 15px;
               float: right;
               text-decoration: none;
+            }
+          }
+          .change-color .el-submenu__title {
+            background-color:rgb(14,168,208);
+            color:white; 
+            & :hover {
+              background-color: rgb(14,168,208);
             }
           }
           .ulbox {
@@ -341,6 +465,12 @@ body,html {
               border-radius: 50%;
               margin-bottom: 2px;
               vertical-align: middle;
+            }
+            .is-light {
+              background-color:rgb(101,200,237); 
+            }
+            .font-light {
+              color:rgb(101,200,237); 
             }
           }
         }

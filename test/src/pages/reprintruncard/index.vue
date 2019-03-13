@@ -1,6 +1,6 @@
 <template>
     <div class="reprintruncard">
-        <span class="reprint-item">重印Runcard标签</span>
+        <!-- <span class="reprint-item">重印Runcard标签</span> -->
         <div class="product-sf"></div>
     </div>
 </template>
@@ -28,7 +28,6 @@ export default {
      >.product-sf {
          width:800px;
          height:500px;
-         background-color: red;
          margin-left:100px;
          padding-top: 10px;
          border-radius: 7px;
